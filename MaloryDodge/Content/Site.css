@@ -9,9 +9,35 @@ body {
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family:         "Sans Unicode", "Lucida Grande", sans-serif;
     margin: 0;
     padding: 0;
+}
+
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-instagram {
+    background: #f09433;
+    color: white;
 }
 
 a {
@@ -28,7 +54,8 @@ a {
     }
 
     a:hover {
-        background-color: #c7d1d6;
+        background-color: floralwhite;
+        text-decoration: double;
     }
 
 header, footer, hgroup,
@@ -99,7 +126,7 @@ h5, h6 {
 }
 
 #body {
-    background-color: #efeeef;
+    background-color: #b6effc;
     clear: both;
     padding-bottom: 35px;
 }
@@ -142,6 +169,15 @@ footer {
     text-decoration: none;
 }
 
+.column {
+    float: left;
+    width: 70%
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 /* login
 ----------------------------------------------------------*/
@@ -209,17 +245,17 @@ ul#menu {
 ----------------------------------------------------------*/
 /* featured */
 .featured {
-    background-color: #fff;
+    background-color: black;
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
+        background-color: seagreen;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        color: #3e5667;
+        color: black;
         padding: 20px 40px 30px 40px;
     }
 
@@ -348,7 +384,6 @@ aside {
     #loginForm .validation-summary-errors li {
         display: inline;
         list-style: none;
-        margin: 0;
     }
 
     #loginForm input {
@@ -620,7 +655,6 @@ tr.pager td {
         #login li {
             display: inline;
             list-style: none;
-            margin: 0;
             padding: 0;
         }
 

@@ -1,51 +1,39 @@
 ﻿@{
     Layout = "~/_SiteLayout.cshtml";
-    Page.Title = "Contact";
+    Page.Title = "Contact Information";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <hgroup class="title">
+        <h1>@Page.Title</h1>
+    </hgroup>
 
-<hgroup class="title">
-    <h1>@Page.Title.</h1>
-    <h2>Your contact page.</h2>
-</hgroup>
+    <section class="contact">
+        <header>
+            <h3>Phone:</h3>
+        </header>
+        <p>
+            <span>410.474.8203</span>
+        </p>
+    </section>
 
-<section class="contact">
-    <header>
-        <h3>Phone:</h3>
-    </header>
-    <p>
-        <span class="label">Main:</span>
-        <span>425.555.0100</span>
-    </p>
-    <p>
-        <span class="label">After Hours:</span>
-        <span>425.555.0199</span>
-    </p>
-</section>
+    <section class="contact">
+        <header>
+            <h3>Email:</h3>
+        </header>
+        <p>
+            <span><a href="mailto:Support@example.com">malorydodge@gmail.com</a></span>
+        </p>
+    </section>
 
-<section class="contact">
-    <header>
-        <h3>Email:</h3>
-    </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
-    </p>
-</section>
+    <section class="contact">
+        <header>
+            <h3>Social Media:</h3>
+        </header>
+        <p>
 
-<section class="contact">
-    <header>
-        <h3>Address:</h3>
-    </header>
-    <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
-    </p>
-</section>
+            <span><a href="https://www.facebook.com/malory.dodge" class="fa fa-facebook"></a></span>
+            &nbsp;
+            <span><a href="https://www.instagram.com/_maloryd/" class="fa fa-instagram"></a></span>
+
+        </p>
+    </section>

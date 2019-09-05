@@ -13,11 +13,7 @@
     var password = "";
     var rememberMe = false;
 
-    var returnUrl = Request.QueryString["ReturnUrl"];
-    if (returnUrl.IsEmpty()) {
-        // Some external login providers always require a return URL value
-        returnUrl = Href("~/");
-    }
+    var returnUrl = "~/User/Blog.cshtml";
 
     // Setup validation
     Validation.RequireField("email", "You must specify an email address.");
@@ -62,7 +58,6 @@
 </hgroup>
 
 <section id="loginForm">
-    <h2>Use a local account to log in.</h2>
     <form method="post">
         @AntiForgery.GetHtml()
         @* If one or more validation errors exist, show an error *@
@@ -93,12 +88,7 @@
         </fieldset>
     </form>
     <p>
-        <a href="~/Account/Register">Don't have a Account?</a>
-        <a href="~/Account/ForgotPassword">Did you forget your password?</a>
+        Don't have a Account? <a href="~/Account/Register">Sign up today!</a><br />
+        Did you forget your password? <a href="~/Account/Contact">Contact for help.</a>
     </p>
-</section>
-
-<section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
-    @RenderPage("~/Account/_ExternalLoginsList.cshtml")
 </section>

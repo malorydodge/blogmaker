@@ -1,18 +1,29 @@
 ﻿@{
     Layout = "~/_SiteLayout.cshtml";
-    Page.Title = "Blog";
+    Page.Title = User.Identity.Name.Split('@').First() +" - Your Posts:";
+
+    if (User.Identity.IsAuthenticated == false)
+    {
+        Response.Redirect("~/Account/Login");
+    }
 }
+
+<hgroup class="title">
+    <h1>@Page.Title</h1>
+</hgroup>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
     <script>
         $(function () {
             $("#accordion").accordion();
             heightStyle: "content"
+
+            collapsible: true
         });
     </script>
 </head>
@@ -20,8 +31,9 @@
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
-                <h1>@Page.Title</h1>
+                <h2>Posts</h2>
             </hgroup>
+            <h3><a href="~/User/NewPost.aspx">Create a new Post</a> </h3>
             <p>
                 <div class="col-md-2">
                     <div id="accordion">
@@ -30,23 +42,21 @@
                             BlogDataContext db = new BlogDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mdodg\source\repos\malorydodge\MaloryDodge\App_Data\Blog.mdf;Integrated Security=True;Connect Timeout=30");
                             var userPosts =
                                 from b in db.Blogs
+                                where b.Username == User.Identity.Name
                                 select b;
                             foreach (var b in userPosts)
                             {
                                 <h3>@b.Title</h3>
                                 <div>
                                     <b>Date: </b>@b.Date <br />
-                                    <b>Username: </b>@b.Username.Split('@').First()<br />
                                     <b>Description: </b><i>@b.Snippet </i><br />
                                     @b.Post<br />
                                 </div>
                             }
                         }
-                    </div></div>
-</p>
+                    </div>
+                </div>
+            </p>
         </div>
     </section>
 </body>
-    
-
-    
